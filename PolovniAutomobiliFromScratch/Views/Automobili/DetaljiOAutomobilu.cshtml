@@ -1,45 +1,48 @@
-﻿@using PolovniAutomobiliFromScratch.Models
+﻿@using Microsoft.Extensions.Localization
+@using PolovniAutomobiliFromScratch.Models
+@using PolovniAutomobiliFromScratch
 @model Automobil
+@inject IStringLocalizer<SharedResource> Localizer
 
 <form>
     <div class="form-group" style="width:150px">
-        <label asp-for="@Model.Marka">Marka</label>
+        <label asp-for="@Model.Marka">@Localizer["Brand"]</label>
         <p type="text" class="form-control">@Model.Marka</p>
     </div>
     <div class="form-group" style="width:150px">
-        <label asp-for="@Model.Model">Model</label>
+        <label asp-for="@Model.Model">@Localizer["Model"]</label>
         <p type="text" class="form-control">@Model.Model</p>
     </div>
     <div class="form-group" style="width:150px">
-        <label asp-for="@Model.Godiste">Godiste</label>
+        <label asp-for="@Model.Godiste">@Localizer["Year of production"]</label>
         <p type="text" class="form-control">@Model.Godiste</p>
     </div>
     <div class="form-group" style="width:150px">
-        <label asp-for="@Model.ZapreminaMotora">Zapremina motora</label>
+        <label asp-for="@Model.ZapreminaMotora">@Localizer["Kubikage"]</label>
         <p type="text" class="form-control">@Model.ZapreminaMotora</p>
     </div>
     <div class="form-group" style="width:150px">
-        <label asp-for="@Model.Snaga">Snaga</label>
+        <label asp-for="@Model.Snaga">@Localizer["Power"]</label>
         <p type="text" class="form-control">@Model.Snaga</p>
     </div>
     <div class="form-group" style="width:150px">
-        <label asp-for="@Model.Gorivo">Gorivo</label>
+        <label asp-for="@Model.Gorivo">@Localizer["Fuel"]</label>
         <p type="text" class="form-control">@Model.Gorivo</p>
     </div>
     <div class="form-group" style="width:150px">
-        <label asp-for="@Model.Karoserija">Karoserija</label>
+        <label asp-for="@Model.Karoserija">@Localizer["Car body"]</label>
         <p type="text" class="form-control">@Model.Karoserija</p>
     </div>
     <div class="form-group" style="width:150px">
-        <label asp-for="@Model.Opis">Opis</label>
+        <label asp-for="@Model.Opis">@Localizer["Description"]</label>
         <p type="text" class="form-control">@Model.Opis</p>
     </div>
     <div class="form-group" style="width:150px">
-        <label asp-for="@Model.Cena">Cena</label>
+        <label asp-for="@Model.Cena">@Localizer["Price"]</label>
         <p type="text" class="form-control">@Model.Cena</p>
     </div>
     <div class="form-group" style="width:150px">
-        <label asp-for="@Model.Kontakt">Kontakt</label>
+        <label asp-for="@Model.Kontakt">@Localizer["Contact of the seller"]</label>
         <p type="text" class="form-control">@Model.Kontakt</p>
     </div>
 </form>

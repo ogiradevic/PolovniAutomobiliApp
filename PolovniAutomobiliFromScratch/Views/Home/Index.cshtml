@@ -1,6 +1,10 @@
-﻿@{
+﻿@using Microsoft.Extensions.Localization
+@using PolovniAutomobiliFromScratch
+@{
     ViewData["Title"] = "Home Page";
 }
+
+@inject IStringLocalizer<SharedResource> Localizer
 
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>

@@ -1,4 +1,7 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.Extensions.Localization
+@using PolovniAutomobiliFromScratch
+@inject IStringLocalizer<SharedResource> Localizer
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -20,25 +23,32 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Početna</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">@Localizer["Home Page"]</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Automobili" asp-action="PregledAutomobila">Pregled automobila</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Automobili" asp-action="PregledAutomobila">@Localizer["All cars"]</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Automobili" asp-action="NoviAutomobil">Novi automobil</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Automobili" asp-action="NoviAutomobil">@Localizer["Add new car"]</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Kontakt" asp-action="Kontakt">Kontakt</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Kontakt" asp-action="Kontakt">@Localizer["Contact"]</a>
                         </li
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Kontakt" asp-action="ONama">O nama</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Kontakt" asp-action="ONama">@Localizer["About us"]</a>
                         </li>
                     </ul>
                     <partial name="_LoginPartial" />
                 </div>
             </div>
         </nav>
+
+        <ul class="list-inline">
+    <li class="list-inline-item"> @Html.ActionLink("en", "SetCulture", "Home", new { culture = "en", sourceUrl = @Context.Request.Path }) </li>
+    <li class="list-inline-item"> @Html.ActionLink("de", "SetCulture", "Home", new { culture = "de-DE", sourceUrl = @Context.Request.Path }) </li>
+    <li class="list-inline-item"> @Html.ActionLink("sr", "SetCulture", "Home", new { culture = "sr", sourceUrl = @Context.Request.Path }) </li>
+        </ul>
+
     </header>
     <div class="container">
         <main role="main" class="pb-3">

@@ -1,5 +1,8 @@
-﻿@using PolovniAutomobiliFromScratch.ViewModels
+﻿@using Microsoft.Extensions.Localization
+@using PolovniAutomobiliFromScratch.ViewModels
+@using PolovniAutomobiliFromScratch
 @model SviAutomobiliViewModel
+@inject IStringLocalizer<SharedResource> Localizer
 
 <div class="row">
     @foreach (var automobil in Model.SviAutomobili)
@@ -8,10 +11,10 @@
             <div class="card-body">
                 <h5 class="card-title">@automobil.Marka - @automobil.Model</h5>
                 <p class="card-text">@automobil.Opis</p>
-                <a class="btn btn-primary" asp-controller="Automobili" asp-action="DetaljiOAutomobilu" asp-route-id="@automobil.Id">Detaljnije</a>
+                <a class="btn btn-primary" asp-controller="Automobili" asp-action="DetaljiOAutomobilu" asp-route-id="@automobil.Id">@Localizer["Details"]</a>
             </div>
             <div class="card-footer">
-                <a class="btn btn-primary" asp-controller="Automobili" asp-action="ObrisiAutomobil" asp-route-id="@automobil.Id">Detaljnije</a>
+                <a class="btn btn-primary" asp-controller="Automobili" asp-action="ObrisiAutomobil" asp-route-id="@automobil.Id">@Localizer["Remove car"]</a>
             </div>
         </div>
     }
